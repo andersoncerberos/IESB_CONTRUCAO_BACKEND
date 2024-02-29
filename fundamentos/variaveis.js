@@ -1,13 +1,13 @@
-const nome = "anderson"
-const nota =  5
- let aprovado = true 
+const nome = "carlos"
+const nota =  3
+ let aprovado = false 
  
- if(nota >= 6){
+ if(nota >= 5){
 
     aprovado =  true
 
  }
 
- console.log("nome: ", nome)
+ console.log("nome:", nome)
  console.log("nota:", nota)
  console.log("aprovado:", aprovado)
