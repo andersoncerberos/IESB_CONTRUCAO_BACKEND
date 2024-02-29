@@ -1,8 +1,8 @@
 const nome = "carlos"
-const nota =  3
+const nota =  8
  let aprovado = false 
  
- if(nota >= 5){
+ if(nota >= 6){
 
     aprovado =  true
 
