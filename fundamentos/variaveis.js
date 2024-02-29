@@ -8,6 +8,6 @@ const nota =  5
 
  }
 
- console.log("nome ", nome)
- console.log("nota", nota)
- console.log("aprovado", aprovado)
+ console.log("nome: ", nome)
+ console.log("nota:", nota)
+ console.log("aprovado:", aprovado)
