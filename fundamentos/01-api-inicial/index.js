@@ -72,6 +72,20 @@ app.get('/aluno/:matricula', (req,res) =>{
    
 })
 
+//path params
+app.get('/aluno/:nome/:matricula/:curso', (req,res) => {
+    console.log(req,res)
+    res.send(`
+        ola${req.params.nome}, sua matricula e ${req.params.matricula}, seu curso e ${req.params.curso}
+    `)
+})
+
+//query parans
+app.get('/pessoa', (req,res)=>{
+    console.log(req.query)
+    res.send("ok")
+})
+
 
 
 
