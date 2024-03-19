@@ -89,7 +89,16 @@ app.get('/pessoa', (req,res)=>{
 
 app.get('/notas', (req,res)=>{
     console.log(req.query)
+    const nota1 = Number(req.query.nota1)
+    const nota2 = Number(req.query.nota2)
+    const nota3 = Number(req.query.nota3)
+    const nota4 = Number(req.query.nota4)
     res.send("ok")
+
+    const media = (nota1 + nota2 + nota3 + nota4)/4
+
+    const resultado = media >= 7 ? "aprovado" : "reprovado"
+    
 })
 
 
