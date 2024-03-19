@@ -59,6 +59,22 @@ app.get('/execicio01/:nota1/:noat2/:nota3/:nota4',(req,res) =>{
 
 } )
 
+// crie um empoint que devolva seu nome e sua matricula
+app.get('/aluno', (req,res) =>{
+
+    res.send("anderson carlos matricula \n 24114290042")
+   
+})
+
+app.get('/aluno/:matricula', (req,res) =>{
+    console.log(req.params)
+    res.send("ok")
+   
+})
+
+
+
+
 
 
 // executando a aplicação na porta definida
