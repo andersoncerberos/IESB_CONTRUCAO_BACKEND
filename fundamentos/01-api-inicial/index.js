@@ -87,6 +87,11 @@ app.get('/pessoa', (req,res)=>{
 })
 
 
+app.get('/notas', (req,res)=>{
+    console.log(req.query)
+    res.send("ok")
+})
+
 
 
 
