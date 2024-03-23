@@ -8,5 +8,12 @@ const prompt = require('prompt-sync')();
 console.log("execicios 3");
 console.log("calculo de reajuste de salario");
 
-const salarioinicial = number (prompt("digite o salario:"));
+const salarioinicial = Number (prompt("digite o salario:"));
+const reajuste = Number(prompt("digite o reajuste:"));
+
+const novosalario = (salarioinicial * reajuste / 100) + salarioinicial;
+
+console.log("o valor do seu novo salario e:"+ novosalario);
+
+
 
