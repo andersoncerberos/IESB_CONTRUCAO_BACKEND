@@ -56,6 +56,10 @@ app.get('/execicio7', (req,res) => {
     soma = soma + produto.preco
   })
   const media = soma/ listaproduto.length
+//calcular o maior preço
+const maiorpreco = 0
+//logica
+
 
   const resultado = {
     precomedio: media.toFixed(2)
