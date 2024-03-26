@@ -59,10 +59,16 @@ app.get('/execicio7', (req,res) => {
 //calcular o maior preço
 const maiorpreco = 0
 //logica
+listaproduto.forEach(produto => {
+    if(produto.preco > maiorpreco){
 
+        maiorpreco = produto.preco
+    }
+})
 
   const resultado = {
     precomedio: media.toFixed(2)
+   
   }
   res.json(resultado)
 })
