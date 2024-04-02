@@ -40,7 +40,6 @@ router.put('/contatos/:id', (req,res) => {
 
 // cadastra contatos
 router.post('/contatos', (req,res) => {
-    console.log(req.body)
     const contatos = req.body
     listacontatos.push(contatos.nome)
     res.status(201).json({ mensage:"contato criado com sucesso"})

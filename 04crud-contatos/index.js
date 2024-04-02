@@ -1,10 +1,13 @@
 //imports
 const express = require('express')
+const cors = require('cors')
 const tutorial = require('./routes/tutorial')
 const subrota = require('./routes/sub-rota')
 const contatos = require("./routes/contatos")
 //configuração
 const app = express()
+// configuração do cors
+app.use(cors({origen: '*'}))
 //middiwares
 //middiwares que transforma o corpo da requisição em objeto jsn
 //dentro da nossa aplicação
