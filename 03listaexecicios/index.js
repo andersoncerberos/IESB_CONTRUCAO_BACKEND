@@ -36,7 +36,15 @@ app.post('/execicio1',(req,res)=>{
 //2. Uma empresa decide dar um aumento de 30% aos funcionários cujo salário é inferior a 1.000 reais.
 //Escreva uma api que receba o salário de um funcionário e imprima o valor do salário 
 //reajustado ou uma mensagem caso o funcionário não tenha direito ao aumento.
-
+app.get('/exercicio2', (req, res) => {
+  const salario = req.body.salario
+  if(salario < 1000 ){
+  const salarioFinal = salario + (salario * 30/100)
+  res.send('Seu novo salario é: ' + salarioFinal)
+  } else {
+      res.send('Seu salario pemanece o mesmo')
+  }
+})
 
 
 //7. Faça uma api para ler o código e o preço de 15 produtos, calcular e escrever:
