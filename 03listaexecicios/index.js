@@ -201,7 +201,7 @@ app.post('/execicio8', (req, res) => {
           Superior a 3.500 | 500 reais
     • Salário a receber do funcionário é igual ao salário líquido mais a gratificação.
 */
-app.post('/execicio1', (req, res) => {
+app.post('/execicio9', (req, res) => {
   const salarioMinimo = req.body.salarioMinimo;
     const horasTrabalhadas = req.body.horasTrabalhadas;
     const dependentes = req.body.dependentes;
