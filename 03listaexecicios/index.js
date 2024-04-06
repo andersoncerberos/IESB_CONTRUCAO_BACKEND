@@ -176,8 +176,8 @@ app.post('/execicio8', (req, res) => {
 
   }
   novosalario = salario + (salario * percentualAumento) / 100
-  res.send('o cargo do funiconario e ' + cargo + 'com o salario de ' + salario + 'e o novo salario e'+ novosalario)
-  
+  res.send('o cargo do funiconario e ' + cargo + 'com o salario de ' + salario + 'e o novo salario e' + novosalario)
+
 
 })
 
@@ -203,36 +203,36 @@ app.post('/execicio8', (req, res) => {
 */
 app.post('/execicio9', (req, res) => {
   const salarioMinimo = req.body.salarioMinimo;
-    const horasTrabalhadas = req.body.horasTrabalhadas;
-    const dependentes = req.body.dependentes;
-    const horasExtras = req.body.horasExtras;
+  const horasTrabalhadas = req.body.horasTrabalhadas;
+  const dependentes = req.body.dependentes;
+  const horasExtras = req.body.horasExtras;
 
-    const valorHoraTrabalhada = salarioMinimo / 5;
-    const salarioMes = horasTrabalhadas * valorHoraTrabalhada;
-    const acrescimoDependentes = dependentes * 32;
-    const valorHoraExtra = valorHoraTrabalhada * 1.5;
-    const valorHorasExtras = horasExtras * valorHoraExtra;
-    const salarioBruto = salarioMes + acrescimoDependentes + valorHorasExtras;
+  const valorHoraTrabalhada = salarioMinimo / 5;
+  const salarioMes = horasTrabalhadas * valorHoraTrabalhada;
+  const acrescimoDependentes = dependentes * 32;
+  const valorHoraExtra = valorHoraTrabalhada * 1.5;
+  const valorHorasExtras = horasExtras * valorHoraExtra;
+  const salarioBruto = salarioMes + acrescimoDependentes + valorHorasExtras;
 
-    let irrf;
-    if (salarioBruto < 2000) {
-        irrf = 0;
-    } else if (salarioBruto >= 2000 && salarioBruto <= 5000) {
-        irrf = salarioBruto * 0.1;
-    } else {
-        irrf = salarioBruto * 0.2;
-    }
+  let irrf;
+  if (salarioBruto < 2000) {
+    irrf = 0;
+  } else if (salarioBruto >= 2000 && salarioBruto <= 5000) {
+    irrf = salarioBruto * 0.1;
+  } else {
+    irrf = salarioBruto * 0.2;
+  }
 
-    const salarioLiquido = salarioBruto - irrf;
+  const salarioLiquido = salarioBruto - irrf;
 
-    let gratificacao;
-    if (salarioLiquido <= 3500) {
-        gratificacao = 1000;
-    } else {
-        gratificacao = 500;
-    }
+  let gratificacao;
+  if (salarioLiquido <= 3500) {
+    gratificacao = 1000;
+  } else {
+    gratificacao = 500;
+  }
 
-    const salarioReceber = salarioLiquido + gratificacao;
+  const salarioReceber = salarioLiquido + gratificacao;
 })
 
 app.listen(3000, () => {
