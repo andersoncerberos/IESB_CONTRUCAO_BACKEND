@@ -54,14 +54,14 @@ router.delete('/produtos/:id', (req, res) => {
     listadeproduto.splice(index, 1)
     res.json({ mensagem: "produto excluido com sucesso" })
 })
-//aletar oproduto
+//alterar o produto
 router.put('/produtos/:id', (req, res) => {
     //usuario digita o id
     const id = req.params.id
+    const novodados = req.body
     // compara o id do usuario com o do produto
     const index = listadeproduto.findIndex(produto => produto.id == id)
     //corpo dos dados
-    const novodados = req.body
     const protudoalterado ={
     
         id: id,
