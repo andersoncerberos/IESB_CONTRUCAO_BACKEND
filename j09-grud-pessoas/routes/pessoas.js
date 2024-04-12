@@ -84,7 +84,7 @@ router.put('/pessoas/:id', (req, res) => {
     }
 
 
-    listadeproduto[index] = protudoalterado
+    listadepessoas[index] = pessoasalterado
 
     res.json({ mensagem: "pessoas alterada" })
 })
