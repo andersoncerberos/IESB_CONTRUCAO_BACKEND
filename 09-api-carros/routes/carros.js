@@ -51,43 +51,72 @@ route.post('/carro', (req, res) => {
             valor: dados.valor
         }
     ]
+
     listaDeCarros.push(carro)
-    if (index == -1) {
-        return res.status(201).json({ mensagem: "carros criado com sucesso", carro })
-    }
-    const carroatualizado = [
-        {
-            id: Number(id),
-            marca: dados.marca,
-            modelo: dados.modelo,
-            cor: dados.cor,
-            valor: dados.valor
-        }
-    ]
-    listaDeCarros[index] = carroatualizado
-    return res.json({ mensagem: "carro atualizado com sucesso", listaDeCarros })
+
+    return res.status(201).json({
+        mensagem: "Carro criado com sucesso!",
+        carro
+    })
+
 
 })
 
 //atualiza uma carro
 route.put("/carros/:id", (req, res) => {
     const id = req.params.id
-    const dados = req.body
-    if (!dados.marca || !dados.modelo || !dados.cor || !dados.valor) {
-        return res.status(400).json({ mensagem: "campos marca,cor,e valor sao obrigatorios" })
+    const corpo = req.body
+
+    if (!corpo.marca || !corpo.modelo || !corpo.cor || !corpo.valor) {
+        return res.status(400).json({ mensagem: "Campos marca, modelo, cor e valor são obrigatórios" })
     }
-    const index = listaDeCarros.findIndex(carro => carro.id == id)
-    return res.status(200).json({ mensagem: "carros criado com sucesso",carro })
+
+    const index = listaCarros.findIndex(carro => carro.id == id)
+    if (index == -1) {
+        return res.status(404).json({ mensagem: "Carro não encontrado!" })
+    }
+
+    const carroAtualizado = {
+        id: Number(id),
+        marca: corpo.marca,
+        modelo: corpo.modelo,
+        cor: corpo.cor,
+        valor: corpo.valor
+    }
+
+    listaCarros[index] = carroAtualizado
+
+    return res.json({
+        mensagem: "Carro atualizado com sucesso!",
+        carroAtualizado
+    })
 })
 // deletar carro
-
-route.delete('/carro/:id', (req, res) => {
+route.delete('/carros/:id', (req, res) => {
     const id = req.params.id
-    const index = listaDeCarros.findIndex(carro => carro.id == id)
+    const index = listaCarros.findIndex(carro => carro.id == id)
     if (index == -1) {
-
-
+        return res.status(404).json({ mensagem: "Carro não encontrado!" })
     }
+    listaCarros.splice(index, 1)
+    res.json({ mensagem: `O Carro ${id} foi excluido com sucesso!` })
+})
+
+// Buscar o valor total de todos os carros por cor
+route.get('/carros/cor/:cor/valor-total', (req, res) => {
+    const cor = req.params.cor
+    const carrosPorCor = listaCarros.filter(carro => carro.cor.toUpperCase() == cor.toUpperCase())
+
+    let valorTotal = 0
+
+    carrosPorCor.forEach(carro => {
+        valorTotal = valorTotal + carro.valor
+    })
+
+    res.json({
+        quantidadeCarros: carrosPorCor.length,
+        valorTotal: valorTotal.toFixed(2)
+    })
 })
 
 

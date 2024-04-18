@@ -234,7 +234,6 @@ app.post('/execicio9', (req, res) => {
 
   const salarioReceber = salarioLiquido + gratificacao;
 })
-
 app.listen(3000, () => {
   console.log("aplicação iniciada em http:localhost:3000")
 })
