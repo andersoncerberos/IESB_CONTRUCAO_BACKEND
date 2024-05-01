@@ -11,9 +11,9 @@ app.get('/hello', (req, res) => {
 })
 
 const DB_USERNAME = process.env.DB_USERNAME;
-const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_SENHA = process.env.DB_SENHA;
 
-mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.phifj9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_SENHA}@cluster0.phifj9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => console.log("Conectado ao meu MongoDB!"))
     .catch(err => console.log("Erro ao conectar no meu MongoDB: ", err))
 
