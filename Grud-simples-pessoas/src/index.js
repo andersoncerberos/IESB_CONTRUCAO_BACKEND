@@ -14,9 +14,7 @@ const PORT = 3000
 const DB_USERNAME = process.env.DB_USERNAME
 const DB_PASSWORD = process.env.DB_PASSWORD
 
-app.get('/hello', (req, res) => {
-    res.json("Hello")
-})
+
 
 mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.phifj9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => console.log('conectado ao mongoDB'))
