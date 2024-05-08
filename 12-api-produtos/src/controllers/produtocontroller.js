@@ -14,12 +14,12 @@ async function create(req, res) {
         res.status(201).json(produtocriado)
     } catch {
         console.log(error)
-        res.status(500).json{
+        res.status(500).json(
             {
                 mensagem: "ocorreu um erro ao cadastra produto",
                     erro: error
             }
-        }
+        )
     }
 }
 // para casa

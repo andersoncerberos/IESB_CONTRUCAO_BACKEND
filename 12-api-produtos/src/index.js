@@ -1,5 +1,6 @@
 const express = require ("express")
 const DBconection = require('./DB/conection')
+const rotas = require('./routes/routes')
 
 
 const app = express()
