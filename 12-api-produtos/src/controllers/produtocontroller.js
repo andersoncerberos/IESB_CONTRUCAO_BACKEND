@@ -22,6 +22,15 @@ async function create(req, res) {
         )
     }
 }
+async function getByid(req, res) {
+    
+}
+async function delete(req, res) {
+    
+}
+async function update(req, res) {
+    
+}
 // para casa
 //getByid
 //delete
