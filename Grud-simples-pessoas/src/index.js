@@ -44,11 +44,11 @@ const DB_USERNAME = process.env.DB_USERNAME
 const DB_PASSWORD = process.env.DB_PASSWORD
 
 
-
-mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.phifj9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
-    .then(() => console.log('conectado ao mongoDB'))
-    .catch((err) => console.log("erro ao conactar o mongoDB", err))
-
+function miain() {
+    mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.phifj9g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+        .then(() => console.log('conectado ao mongoDB'))
+        .catch((err) => console.log("erro ao conactar o mongoDB", err))
+}
 
 
 
