@@ -23,9 +23,9 @@ async function create(req, res) {
     }
 }
 // para casa
-getByid
-delete
-update
+//getByid
+//delete
+//update
 
 module.exports = {
     getAll,

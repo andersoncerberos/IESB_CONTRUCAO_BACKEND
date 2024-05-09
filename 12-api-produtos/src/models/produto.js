@@ -1,6 +1,6 @@
-const mongoose = require('mogoose')
+const mongoose = require('mongoose')
 
-const schema = mongoose.schema({
+const schema = mongoose.Schema({
     nome: {
         type: String,
         required: true
