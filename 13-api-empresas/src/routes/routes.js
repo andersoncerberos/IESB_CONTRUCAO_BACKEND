@@ -3,12 +3,14 @@ const router = express.Router()
 
 const cargocontroler = require('../controller/cargo-controler')
 
+const {cargovalidador} = require('../validators/carrgovalidator')
+const {validarid} = require('../validators/idvalidator')
 
-router.post('/cargos', cargocontroler.create)
+router.post('/cargos', cargovalidador,cargocontroler.create)
 router.get('/cargos', cargocontroler.getAll)
-router.get('/cargos/:id', cargocontroler.getById)
-router.put('/cargos/:id', cargocontroler.update)
-router.delete('/cargos/:id', cargocontroler.remove)
+router.get('/cargos/:id', validarid , cargocontroler.getByid)
+router.put('/cargos/:id',validarid,cargovalidador,  cargocontroler.update)
+router.delete('/cargos/:id', validarid, cargocontroler.remove)
 
 
 

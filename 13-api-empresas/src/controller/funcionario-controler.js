@@ -19,7 +19,7 @@ async function create(req, res) {
 }
 
 async function gatByid(req,res){
-    const funcionario = await Funcionario.findBid(req.pa)
+    const funcionario = await Funcionario.findBid(req.params.id).populate('cargo')
 }
 
 
@@ -28,6 +28,9 @@ async function gatByid(req,res){
 
 
 module.exports = {
-    create
-
+    create,
+    getAll,
+    getByid,
+    update,
+    remove
 }
