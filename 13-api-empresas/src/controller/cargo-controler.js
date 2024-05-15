@@ -29,7 +29,7 @@ async function getByid(req, res) {
 
 async function update(req, res) {
 
-    const cargoatualizado = await Cargo.findByIdAndUpdate(req.params.id, req.body,{new: true})
+    const cargoatualizado = await Cargo.findByIdAndUpdate(req.params.id, req.body, { new: true })
     if (cargoatualizado) {
         res.json(cargoatualizado)
     } else {
@@ -41,7 +41,7 @@ async function remove(req, res) {
     const cargoexcluido = await Cargo.findByIdAndDelete(req.params.id)
     res.json({ mensagem: "Cargo excluido com sucesso!" })
     if (cargoexcluido) {
-        res.json({mensagem:"cargo excluido com sucesso", cargoexcluido})
+        res.json({ mensagem: "cargo excluido com sucesso", cargoexcluido })
     } else {
         res.status(404).json({ mensagem: "cagor nao encontrado" })
     }
