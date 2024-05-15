@@ -17,19 +17,36 @@ async function create(req, res) {
         res.status(500).json(
             {
                 mensagem: "ocorreu um erro ao cadastra produto",
-                    erro: error
+                erro: error
             }
         )
     }
 }
 async function getByid(req, res) {
-    
+    const produto = await Produto.findById(req.params.id)
+    if (cargo) {
+        res.json(produto)
+    } else {
+        res.status(404).json({ mensagem: "produto não encontrado" })
+    }
+
 }
-async function delete(req, res) {
-    
+async function remove(req, res) {
+    const produtoexcluido = await Produto.findByIdAndDelete(req.params.id)
+    res.json({ mensagem: "Produto excluido con sucesso" })
+    if (produtoexcluido) {
+        res.json({ mensagem: "produto excluido com sucesso", produtoexcluido })
+    } else {
+        res.status(404).json({ mensagem: "produto não encontrado" })
+    }
 }
 async function update(req, res) {
-    
+    const produtoAtualizado = await Produto.findByIdAndUpdate(req.params.id, req.body)
+    if (produtoAtualizado) {
+        res.json({ mensagem: "produto atualizado com sucesso", produtoAtualizado })
+    } else {
+        res.status(404).json({ mensagem: "produto não encontrado" })
+    }
 }
 // para casa
 //getByid
@@ -38,5 +55,8 @@ async function update(req, res) {
 
 module.exports = {
     getAll,
-    create
+    create,
+    getByid,
+    remove,
+    update
 }
