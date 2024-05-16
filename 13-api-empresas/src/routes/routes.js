@@ -3,6 +3,7 @@ const router = express.Router()
 
 const cargocontroler = require('../controller/cargo-controler')
 const departamentocontroler = require('../controller/departamentocontroller')
+const FuncionarioController = require('../controller/funcionario-controler')
 
 const {cargovalidador} = require('../validators/carrgovalidator')
 const {validarid} = require('../validators/idvalidator')
@@ -20,6 +21,12 @@ router.get('/departamento', departamentocontroler.getAll)
 router.get('/departamento/:id',Departamentovalidador,departamentocontroler.getByid)
 router.put('/cargos/:id',validarid,Departamentovalidador,departamentocontroler.update)
 router.delete('/cargos/:id', validarid, departamentocontroler.remove)
+
+router.post('/funcionarios', FuncionarioController.create)
+router.get('/funcionarios', FuncionarioController.getAll)
+router.get('/funcionarios/:id', FuncionarioController.getById)
+router.put('/funcionarios/:id', FuncionarioController.update)
+router.delete('/funcionarios/:id', FuncionarioController.remove)
 
 
 module.exports = router
