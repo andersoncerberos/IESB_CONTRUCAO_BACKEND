@@ -1,5 +1,5 @@
 const Cargo = require('../models/cargo')
-const CargoModel = require('../models/cargo')
+
 
 //metodos 
 async function create(req, res) {
@@ -9,9 +9,6 @@ async function create(req, res) {
 
 
 }
-
-
-
 
 async function getAll(req, res) {
     res.json(await Cargo.find())
@@ -55,3 +52,4 @@ module.exports = {
     update,
     remove
 }
+
