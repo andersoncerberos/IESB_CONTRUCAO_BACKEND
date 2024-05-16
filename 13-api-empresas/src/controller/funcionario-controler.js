@@ -18,7 +18,7 @@ async function create(req, res) {
     }
 }
 
-async function gatByid(req,res){
+async function getByid(req,res){
     const funcionario = await Funcionario.findBid(req.params.id).populate('cargo')
 }
 

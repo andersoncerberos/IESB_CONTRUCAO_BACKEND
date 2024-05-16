@@ -24,7 +24,7 @@ async function create(req, res) {
 }
 async function getByid(req, res) {
     const produto = await Produto.findById(req.params.id)
-    if (cargo) {
+    if (produto) {
         res.json(produto)
     } else {
         res.status(404).json({ mensagem: "produto não encontrado" })
