@@ -21,6 +21,11 @@ const schema = new mongoose.Schema(
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'cargo',
             required: false
+        },
+        depatamento: {
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: 'departamento',
+            required: false
         }
     },
     {

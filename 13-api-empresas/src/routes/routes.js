@@ -24,7 +24,7 @@ router.delete('/cargos/:id', validarid, departamentocontroler.remove)
 
 router.post('/funcionarios', FuncionarioController.create)
 router.get('/funcionarios', FuncionarioController.getAll)
-router.get('/funcionarios/:id', FuncionarioController.getById)
+router.get('/funcionarios/:id', FuncionarioController.getByid)
 router.put('/funcionarios/:id', FuncionarioController.update)
 router.delete('/funcionarios/:id', FuncionarioController.remove)
 

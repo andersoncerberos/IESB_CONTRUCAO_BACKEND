@@ -46,10 +46,10 @@ async function remove(req, res) {
 
 
 module.exports = {
-    create,
-    getAll,
-    getByid,
-    update,
-    remove
+    create,//criar
+    getAll,//busca por todos 
+    getByid,//buscar po id
+    update,//atualizar
+    remove // delata
 }
 
