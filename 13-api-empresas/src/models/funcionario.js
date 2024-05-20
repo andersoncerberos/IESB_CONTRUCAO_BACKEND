@@ -6,6 +6,10 @@ const schema = new mongoose.Schema(
             type: String,
             required: true
         },
+        cpf: {
+            type: String,
+            required: true
+        },
         dataNascimento: {
             type: Date,
             required: true
@@ -16,6 +20,31 @@ const schema = new mongoose.Schema(
             lowercase: true,
             trim: true,
             unique: true
+        },
+        telefone: {
+            type: String,
+            required: true
+        },
+        dataContratacao: {
+            type: Date,
+            required: true
+        },
+        dataNascimento: {
+            type: Date,
+            required: true
+        },
+        genero: {
+            type: String,
+            required: true
+        },
+        endereco: {
+            cep: String,
+            uf: String,
+            logradouro: String,
+            localidade: String,
+            bairro: String,
+            numero: String,
+            complemento: String
         },
         cargo: {
             type: mongoose.SchemaTypes.ObjectId,
