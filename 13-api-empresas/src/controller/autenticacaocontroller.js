@@ -27,23 +27,24 @@ async function registrar(req, res,) {
     res.status(201).json({ mensagem: 'usuario cadastrado com sucesso' })
 }
 
-async function login(req,res){
-    const {email,senha} = req.body
+async function login(req, res) {
+    const { email, senha } = req.body
 
-    const usuario = await Usuario.findOne({email})
+    const usuario = await Usuario.findOne({ email })
 
-    if(!usuario){
-        res.status(401).json({mensagem:'usuario nao cadastrado'})    
+    if (!usuario) {
+        res.status(401).json({ mensagem: 'usuario nao cadastrado' })
+    }
 }
 const senhavalida = bcrypt.compare(senha, usuario.senha)
 
-if(!senhavalida){
-    res.status(401).json({menasgem:'usuario ou senha invalidos'})
+if (!senhavalida) {
+    res.status(401).json({ menasgem: 'usuario ou senha invalidos' })
 }
 
-const tolken = jwt.sign({email: usuario.email}, JWT_SECRET,{expiresIn:'10m'})
+const tolken = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '10m' })
 
-res.json({mensagem:'login efetuado com sucesso', tolken)
+res.json({ mensagem: 'login efetuado com sucesso' }, tolken)
 
 
 
