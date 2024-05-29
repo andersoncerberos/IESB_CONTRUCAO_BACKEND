@@ -1,7 +1,7 @@
 const express = require ('express')
 const PORT = 3000
 const app = express()
-const swaggerui = require('swagger-ui-express')
+const swaggerUI = require('swagger-ui-express')
 
 app.use(express.json())
 
@@ -9,7 +9,7 @@ const DBconnection = require('./DB/conection')
 DBconnection()
 
 const swaggerfile = require('./swagger.json')
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerfile))
 
 const autenticacaoRoutes = require('./routes/autenticacao.routes')
 app.use(autenticacaoRoutes)

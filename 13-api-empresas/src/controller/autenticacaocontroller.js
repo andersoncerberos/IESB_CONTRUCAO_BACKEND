@@ -35,29 +35,18 @@ async function login(req, res) {
     if (!usuario) {
         res.status(401).json({ mensagem: 'usuario nao cadastrado' })
     }
+
+    const senhavalida = await bcrypt.compare(senha, usuario.senha)
+
+    if (!senhavalida) {
+        res.status(401).json({ menasgem: 'usuario ou senha invalidos' })
+    }
+
+    const tolken = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '10m' })
+
+    res.json({ mensagem: 'login efetuado com sucesso' }, tolken)
+
 }
-const senhavalida = bcrypt.compare(senha, usuario.senha)
-
-if (!senhavalida) {
-    res.status(401).json({ menasgem: 'usuario ou senha invalidos' })
-}
-
-const tolken = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '10m' })
-
-res.json({ mensagem: 'login efetuado com sucesso' }, tolken)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

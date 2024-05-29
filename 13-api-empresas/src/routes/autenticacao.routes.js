@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const autenticacaoValidadador= require('../validators/autenticacaoValidadador')
+const autentecacaocontroller = require('../controller/autenticacaocontroller')
 
-const {usuariovalidador} = require('../validators/autenticacaoValidadador')
+const {usuariovalidador, loginvalidador} = require ('../validators/autenticacaovalidadador')
 
-router.post('/auth/registor',autenticacaoValidadador,autenticacaocontroller)
+router.post('/auth/registor',usuariovalidador, autentecacaocontroller.login)
 
-router.post('/auth/registor',loginvalidador, autenticacaocontroller.login)
+router.post('/auth/login',loginvalidador,autentecacaocontroller.login)
 
 
 
