@@ -11,6 +11,4 @@ router.post('/auth/registor',loginvalidador, autenticacaocontroller.login)
 
 
 
-module.exports = {
-
-}
+module.exports = router

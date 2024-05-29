@@ -42,6 +42,7 @@ function usuariovalidador(req, res, next) {
                 erros: errors
             })
         })
+    }
     function loginvalidador(req, res, next) {
         cargoschema
             .validate(req.body, { abortEarly: false })
@@ -60,12 +61,21 @@ function usuariovalidador(req, res, next) {
                 })
             })
     }
-    async function checartolken(req,res, next){
-        const aut = req.get
+    async function checarToken(req, res, next) {
+        try {
+            const authorizationHeader = req.get('Authorization')
+            const separator = authorizationHeader.split(' ')
+            const token = separator[1]
+
+            jwt.verify(token, JWT_SECRET)
+            next()
+        } catch (error) {
+            return res.status(401).json({ mensagem: "token inválido" })
+        }
 
     }
-
     module.exports = {
         usuariovalidador,
-        loginvalidador
+        loginvalidador,
+        checarToken
     }
