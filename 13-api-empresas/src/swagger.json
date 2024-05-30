@@ -79,6 +79,9 @@
     },
     "/cargos": {
       "post": {
+        "tags": [
+          "cargos"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -87,9 +90,32 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "example": "any"
+                  },
+                  "descricao": {
+                    "example": "any"
+                  },
+                  "salario": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
         }
       },
       "get": {
+        "tags": [
+          "cargos"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -100,6 +126,9 @@
     },
     "/cargos/{id}": {
       "get": {
+        "tags": [
+          "cargos"
+        ],
         "description": "",
         "parameters": [
           {
@@ -124,6 +153,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Cargos"
+        ],
         "description": "",
         "parameters": [
           {
@@ -148,6 +180,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Cargos"
+        ],
         "description": "",
         "parameters": [
           {

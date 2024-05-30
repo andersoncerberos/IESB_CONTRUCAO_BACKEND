@@ -3,6 +3,9 @@ const Cargo = require('../models/cargo')
 
 //metodos 
 async function create(req, res) {
+    // #swagger.tags = ['cargos']
+    const { nome, descricao, salario } = req.body
+
     const cargo = new Cargo(req.body)
     const cargoCriado = await cargo.save()
     res.status(201).json(cargoCriado)
@@ -11,11 +14,13 @@ async function create(req, res) {
 }
 
 async function getAll(req, res) {
+    // #swagger.tags = ['cargos']
     res.json(await Cargo.find())
 
 }
 
 async function getByid(req, res) {
+    // #swagger.tags = ['cargos']
     const cargo = await Cargo.findById(req.params.id)
     if (cargo) {
         res.json(cargo)
@@ -25,7 +30,7 @@ async function getByid(req, res) {
 }
 
 async function update(req, res) {
-
+    // #swagger.tags = ['Cargos']   
     const cargoatualizado = await Cargo.findByIdAndUpdate(req.params.id, req.body, { new: true })
     if (cargoatualizado) {
         res.json(cargoatualizado)
@@ -35,6 +40,7 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
+    // #swagger.tags = ['Cargos']
     const cargoexcluido = await Cargo.findByIdAndDelete(req.params.id)
     res.json({ mensagem: "Cargo excluido com sucesso!" })
     if (cargoexcluido) {
