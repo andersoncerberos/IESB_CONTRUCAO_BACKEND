@@ -13,6 +13,9 @@
   "paths": {
     "/auth/registor": {
       "post": {
+        "tags": [
+          "login"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -46,6 +49,9 @@
     },
     "/auth/login": {
       "post": {
+        "tags": [
+          "login"
+        ],
         "description": "",
         "responses": {
           "200": {

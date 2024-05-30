@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken')
 const JWT_SECRET = process.env.JWT_SECRET
 
 async function registrar(req, res,) {
+     // #swagger.tags = ['registro']
     const { nome, email, senha } = req.body
 
     const usuarioexiste = await usuario.findOne({ email })
@@ -28,6 +29,7 @@ async function registrar(req, res,) {
 }
 
 async function login(req, res) {
+     // #swagger.tags = ['login']
     const { email, senha } = req.body
 
     const usuario = await Usuario.findOne({ email })
