@@ -30,7 +30,7 @@ function projetovalidador(req, res, next) {
                 return erro
             })
             res.status(400).json({
-                mensagem: "falha na validação doscampos",
+                mensagem: "falha na validação dos campos",
                 erros: errors
             })
         })
