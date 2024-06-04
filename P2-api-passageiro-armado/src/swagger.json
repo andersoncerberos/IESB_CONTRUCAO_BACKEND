@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "api-empresas",
+    "title": "api-passageiro-armado",
     "description": "api de cadastro de passageiro portando arma de fogo para embarca em avioes domesticos ",
     "version": "1.0.0"
   },
@@ -14,7 +14,7 @@
     "/passageiro": {
       "post": {
         "tags": [
-          "passageiro"
+          "Passageiro"
         ],
         "description": "",
         "responses": {
@@ -54,7 +54,7 @@
       },
       "get": {
         "tags": [
-          "passageiro"
+          "Passageiro"
         ],
         "description": "",
         "responses": {
@@ -67,7 +67,7 @@
     "/passageiro/{id}": {
       "get": {
         "tags": [
-          "passageiro"
+          "Passageiro"
         ],
         "description": "",
         "parameters": [
@@ -94,7 +94,7 @@
       },
       "put": {
         "tags": [
-          "passageiro"
+          "Passageiro"
         ],
         "description": "",
         "parameters": [
@@ -121,7 +121,7 @@
       },
       "delete": {
         "tags": [
-          "passageiro"
+          "Passageiro"
         ],
         "description": "",
         "parameters": [
@@ -150,7 +150,7 @@
     "/passagem": {
       "post": {
         "tags": [
-          "passagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "responses": {
@@ -187,7 +187,7 @@
       },
       "get": {
         "tags": [
-          "passagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "responses": {
@@ -200,7 +200,7 @@
     "/passagem/{id}": {
       "get": {
         "tags": [
-          "passagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "parameters": [
@@ -227,7 +227,7 @@
       },
       "put": {
         "tags": [
-          "passagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "parameters": [
@@ -254,7 +254,7 @@
       },
       "delete": {
         "tags": [
-          "passagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "parameters": [
@@ -314,7 +314,7 @@
       },
       "get": {
         "tags": [
-          "armas"
+          "Armas"
         ],
         "description": "",
         "responses": {
@@ -327,7 +327,7 @@
     "/armas/{id}": {
       "get": {
         "tags": [
-          "armas"
+          "Armas"
         ],
         "description": "",
         "parameters": [
@@ -354,7 +354,7 @@
       },
       "put": {
         "tags": [
-          "armas"
+          "Armas"
         ],
         "description": "",
         "parameters": [
@@ -381,7 +381,7 @@
       },
       "delete": {
         "tags": [
-          "armas"
+          "Armas"
         ],
         "description": "",
         "parameters": [
@@ -410,7 +410,7 @@
     "/orgao": {
       "post": {
         "tags": [
-          "orgao"
+          "Orgao"
         ],
         "description": "",
         "responses": {
@@ -444,7 +444,7 @@
       },
       "get": {
         "tags": [
-          "orgao"
+          "Orgao"
         ],
         "description": "",
         "responses": {
@@ -457,7 +457,7 @@
     "/orgao/{id}": {
       "get": {
         "tags": [
-          "orgao"
+          "Orgao"
         ],
         "description": "",
         "parameters": [
@@ -484,7 +484,7 @@
       },
       "put": {
         "tags": [
-          "orgao"
+          "Orgao"
         ],
         "description": "",
         "parameters": [
@@ -511,7 +511,7 @@
       },
       "delete": {
         "tags": [
-          "orgao"
+          "Orgao"
         ],
         "description": "",
         "parameters": [
@@ -540,7 +540,7 @@
     "/missao": {
       "post": {
         "tags": [
-          "missao"
+          "Missao"
         ],
         "description": "",
         "responses": {
@@ -574,7 +574,7 @@
       },
       "get": {
         "tags": [
-          "missao"
+          "Missao"
         ],
         "description": "",
         "responses": {
@@ -587,7 +587,7 @@
     "/missao/{id}": {
       "get": {
         "tags": [
-          "missao"
+          "Missao"
         ],
         "description": "",
         "parameters": [
@@ -614,7 +614,7 @@
       },
       "put": {
         "tags": [
-          "missao"
+          "Missao"
         ],
         "description": "",
         "parameters": [
@@ -641,7 +641,7 @@
       },
       "delete": {
         "tags": [
-          "missao"
+          "Missao"
         ],
         "description": "",
         "parameters": [

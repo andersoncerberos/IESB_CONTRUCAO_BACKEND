@@ -10,6 +10,7 @@ app.use(express.json())
 const DBconnection = require('./database/conection')
 DBconnection()
 
+
 const swaggerfile = require('./swagger.json')
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerfile))
 
@@ -19,8 +20,8 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerfile))
 //const { checarToken } = require('./validators/v')
 
 
-*//app.use("/", checarToken, routes)
+//app.use("/", checarToken, routes)
 
 app.listen(PORT,()=>{
-    console.log(`aplicação rodando na PORTA ${PORT}`)
+    console.log(`aplicação rodando na http://localhost:${PORT}`)
 })

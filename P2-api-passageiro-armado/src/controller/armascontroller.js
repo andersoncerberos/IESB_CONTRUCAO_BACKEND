@@ -13,13 +13,13 @@ async function create(req, res) {
 }
 
 async function getAll(req, res) {
-    // #swagger.tags = ['armas']
+    // #swagger.tags = ['Armas']
     res.json(await Armas.find())
 
 }
 
 async function getByid(req, res) {
-    // #swagger.tags = ['armas']
+    // #swagger.tags = ['Armas']
     const armas = await Armas.findById(req.params.id)
     if (armas) {
         res.json(Armas)
@@ -29,7 +29,7 @@ async function getByid(req, res) {
 }
 
 async function update(req, res) {
-    // #swagger.tags = ['armas']    
+    // #swagger.tags = ['Armas']    
     const armasatualizadas = await Armas.findByIdAndUpdate(req.params.id, req.body, { new: true })
     if (armasatualizadas) {
         res.json(armasatualizadas)
@@ -39,7 +39,7 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
-    // #swagger.tags = ['armas']
+    // #swagger.tags = ['Armas']
     const armasexcluida = await Armas.findByIdAndDelete(req.params.id)
     if (armasexcluida) {
         res.json({ mensagem: "arma excluida com sucesso", armasexcluida })

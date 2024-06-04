@@ -1,7 +1,7 @@
 const Orgao = require('../models/orgao')
 
 async function create(req, res) {
-    // #swagger.tags = ['orgao']
+    // #swagger.tags = ['Orgao']
 
     const { nome , regiao, responsavel , dataAltorizacao } = req.body
     const orgao = new Orgao(req.body)
@@ -12,13 +12,13 @@ async function create(req, res) {
 }
 
 async function getAll(req, res) {
-    // #swagger.tags = ['orgao']
+    // #swagger.tags = ['Orgao']
     res.json(await Orgao.find())
 
 }
 
 async function getByid(req, res) {7
-    // #swagger.tags = ['orgao']
+    // #swagger.tags = ['Orgao']
     const orgao = await Orgao.findById(req.params.id)
     if (orgao) {
         res.json(orgao)
@@ -28,7 +28,7 @@ async function getByid(req, res) {7
 }
 
 async function update(req, res) {
-    // #swagger.tags = ['orgao']    
+    // #swagger.tags = ['Orgao']    
     const orgaoatualizado = await Orgao.findByIdAndUpdate(req.params.id, req.body, { new: true })
     if (orgaoatualizado) {
         res.json(orgaoatualizado)
@@ -38,7 +38,7 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
-    // #swagger.tags = ['orgao']
+    // #swagger.tags = ['Orgao']
     const orgaoexcluido = await Orgao.findByIdAndDelete(req.params.id)
     if (orgaoexcluido) {
         res.json({ mensagem: "orgao excluido com sucesso", orgaoexcluido })

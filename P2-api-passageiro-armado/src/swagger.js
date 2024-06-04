@@ -2,7 +2,7 @@
 const swaggerAutogen = require('swagger-autogen')({openapi:'3.0.0'})
 const doc = {
     info:{
-        title: 'api-empresas',
+        title: 'api-passageiro-armado',
         description:'api de cadastro de passageiro portando arma de fogo para embarca em avioes domesticos '
     },
     host:'localhost3000',

@@ -1,7 +1,7 @@
 const Passageiro = require('../models/passageiro')
 
 async function create(req, res) {
-    // #swagger.tags = ['passageiro']
+    // #swagger.tags = ['Passageiro']
 
     const { nome , cpf , email, telefone, endereco, genero } = req.body
     const passageiro = new Passageiro(req.body)
@@ -12,13 +12,13 @@ async function create(req, res) {
 }
 
 async function getAll(req, res) {
-    // #swagger.tags = ['passageiro']
+    // #swagger.tags = ['Passageiro']
     res.json(await Passageiro.find().populate('armas', 'orgao', 'passagem-aerea', 'missao'))
 
 }
 
 async function getByid(req, res) {
-    // #swagger.tags = ['passageiro']
+    // #swagger.tags = ['Passageiro']
     const passageiro = await Passageiro.findById(req.params.id).populate('armas', 'orgao', 'passagem-aerea', 'missao')
     if (passagerio) {
         res.json(passageiro)
@@ -28,7 +28,7 @@ async function getByid(req, res) {
 }
 
 async function update(req, res) {
-    // #swagger.tags = ['passageiro']
+    // #swagger.tags = ['Passageiro']
 
     const passageiroatualizado = await Passageiro.findByIdAndUpdate(req.params.id, req.body, { new: true })
     if (passageiroatualizado) {
@@ -39,7 +39,7 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
-    // #swagger.tags = ['passageiro']
+    // #swagger.tags = ['Passageiro']
     const passageiroexcluido = await Funcionario.findByIdAndDelete(req.params.id)
     if (passageiroexcluido) {
         res.json({ mensagem: "passageiro excluido com sucesso", passageiroexcluido })
