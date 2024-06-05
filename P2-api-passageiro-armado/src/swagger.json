@@ -254,7 +254,7 @@
       },
       "delete": {
         "tags": [
-          "assagem-aerea"
+          "Passagem-aerea"
         ],
         "description": "",
         "parameters": [
@@ -283,7 +283,7 @@
     "/armas": {
       "post": {
         "tags": [
-          "armas"
+          "Armas"
         ],
         "description": "",
         "responses": {

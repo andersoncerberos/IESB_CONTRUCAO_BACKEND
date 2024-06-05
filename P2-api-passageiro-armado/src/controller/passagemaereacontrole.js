@@ -40,7 +40,7 @@ async function update(req, res) {
 }
 
 async function remove(req, res) {
-    // #swagger.tags = ['assagem-aerea']
+    // #swagger.tags = ['Passagem-aerea']
     const passagemexcluida = await PassagemAerea.findByIdAndDelete(req.params.id)
     if (passagemexcluida) {
         res.json({ mensagem: "passagem excluida com sucesso", passagemexcluida })

@@ -3,7 +3,7 @@ const Armas = require('../models/armas')
 
 
 async function create(req, res) {
-    // #swagger.tags = ['armas']
+    // #swagger.tags = ['Armas']
     const { nome , tipo , numeracao } = req.body
     const armas = new Armas(req.body)
     const armasCriada = await Armas.save()
