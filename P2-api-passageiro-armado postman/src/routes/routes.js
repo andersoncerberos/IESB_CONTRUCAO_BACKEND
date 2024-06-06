@@ -45,10 +45,4 @@ router.put('/missao/:id',validarid,missaocontroller.update)
 router.delete('/missao/:id', validarid, missaocontroller.remove)
 
 
-
-
-
-
-
-
 module.exports = router

@@ -32,22 +32,22 @@ const schema = new mongoose.Schema(
         armas: {
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'armas',
-            required: true
+            required: false
         },
         orgao: {
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'departamento',
-            required: true
+            required: false
         },
         passagemAerea: {
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'passagem-aerea',
-            required: true
+            required: false
         },
         missao: {
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'missao',
-            required: true
+            required: false
         }
     },
     {
