@@ -6,25 +6,20 @@ const schema = new mongoose.Schema(
             type: String,
             required: true
         },
-        tipo: {
+        email: {
             type: String,
             required: true
         },
-        numeracao: {
+        senha: {
             type: String,
-            required: true
-        },
-        quantidade: {
-            type: Number,
             required: true
         }
-
     },
     {
         timestamps: true
     }
 )
 
-const Armas = mongoose.model('armas', schema)
+const Usuario = mongoose.model('usuario', schema)
 
-module.exports = Armas
+module.exports = Usuario

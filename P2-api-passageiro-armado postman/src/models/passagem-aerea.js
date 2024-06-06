@@ -16,9 +16,9 @@ const schema = new mongoose.Schema(
         },
         dataChegada: {
             type: Date,
-            required: false
+            required: true
         },
-        numeroPasssagem: {
+        numeroPassagem: {
             type: Number,
             required: true
         },
@@ -33,6 +33,6 @@ const schema = new mongoose.Schema(
     }
 )
 
-const PassagemAerea = mongoose.model('passagem', schema)
+const PassagemAerea = mongoose.model('passagem-aerea', schema)
 
 module.exports = PassagemAerea

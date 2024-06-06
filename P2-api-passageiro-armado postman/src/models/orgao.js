@@ -8,11 +8,11 @@ const schema = new mongoose.Schema(
         }, regiao: {
             type: String,
             required: true
-        }, responsavel: {
+        }, diretor: {
             type: String,
             required: true
-        }, dataAltorizacao: {
-            type: Date,
+        }, departamento: {
+            type: String,
             required: true
         }
     },

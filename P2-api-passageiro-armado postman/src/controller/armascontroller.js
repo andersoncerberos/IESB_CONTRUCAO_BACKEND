@@ -5,7 +5,7 @@ const Armas = require('../models/armas')
 async function create(req, res) {
     
     const armas = new Armas(req.body)
-    const armasCriada = await Armas.save()
+    const armasCriada = await armas.save()
     res.status(201).json(armasCriada)
 
 

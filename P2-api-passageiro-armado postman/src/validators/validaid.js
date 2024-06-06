@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-function validarid(re, res, next) {
+function validarid(req, res, next) {
     const isValid = mongoose.Types.ObjectId.isValid(req.params.id)
     if (isValid) {
         next()

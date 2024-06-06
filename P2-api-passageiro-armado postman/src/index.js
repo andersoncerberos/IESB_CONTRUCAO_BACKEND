@@ -1,17 +1,22 @@
-const express = require ('express')
-const routes = require('./routes/routes')
-const PORT = 3000
+const express = require('express')
 const app = express()
-
-
-app.use(express.json())
-
-app.use(routes)
+const PORT = 3000
 
 const DBconnection = require('./database/conection')
 DBconnection()
 
+app.use(express.json())
 
-app.listen(PORT,()=>{
-    console.log(`aplicação rodando na http://localhost:${PORT}`)
+
+
+const autenticacaoRoutes = require('./routes/autenticacao.routes')
+app.use(autenticacaoRoutes)
+
+const { checarToken } = require('./validators/autenticacaovalidator')
+
+const routes = require('./routes/routes')
+app.use("/", checarToken, routes)
+
+app.listen(PORT, () => {
+    console.log(`Aplicação rodando na porta ${PORT}`)
 })

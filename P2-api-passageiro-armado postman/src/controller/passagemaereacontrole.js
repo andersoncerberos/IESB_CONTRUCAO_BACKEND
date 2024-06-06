@@ -2,7 +2,7 @@ const PassagemAerea = require('../models/passagem-aerea')
 
 async function create(req, res) {
 
-    const passagem = new Passagem(req.body)
+    const passagem = new PassagemAerea(req.body)
     const passagemCriada = await passagem.save()
     res.status(201).json(passagemCriada)
 

@@ -20,10 +20,14 @@ const schema = new mongoose.Schema(
         telefone: {
             type: String,
             required: true
-        },
-        endereco: {
-            type: String,
-            required: true
+        }, endereco: {
+            cep: String,
+            uf: String,
+            logradouro: String,
+            localidade: String,
+            bairro: String,
+            numero: String,
+            complemento: String
         },
         genero: {
             type: String,
@@ -36,19 +40,10 @@ const schema = new mongoose.Schema(
         },
         orgao: {
             type: mongoose.SchemaTypes.ObjectId,
-            ref: 'departamento',
+            ref: 'orgao',
             required: false
         },
-        passagemAerea: {
-            type: mongoose.SchemaTypes.ObjectId,
-            ref: 'passagem-aerea',
-            required: false
-        },
-        missao: {
-            type: mongoose.SchemaTypes.ObjectId,
-            ref: 'missao',
-            required: false
-        }
+
     },
     {
         timestamps: true

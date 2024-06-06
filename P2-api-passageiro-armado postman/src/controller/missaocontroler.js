@@ -3,8 +3,8 @@ const Missao = require('../models/missao')
 
 async function create(req, res) {
     
-    const missoa = new Missao(req.body)
-    const missaoCriada = await Missao.save()
+    const missao = new Missao(req.body)
+    const missaoCriada = await missao.save()
     res.status(201).json(missaoCriada)
 
 

@@ -2,9 +2,8 @@ const Orgao = require('../models/orgao')
 
 async function create(req, res) {
    
-    const { nome , regiao, responsavel , dataAltorizacao } = req.body
     const orgao = new Orgao(req.body)
-    const orgaoCriado = await Orgao.save()
+    const orgaoCriado = await orgao.save()
     res.status(201).json(orgaoCriado)
 
 
