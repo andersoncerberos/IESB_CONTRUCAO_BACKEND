@@ -7,17 +7,17 @@ async function create(req, res) {
     try {
         const passageiro = new Passageiro(req.body)
         // Valide o telefone
-        const telefoneValido = validatePhoneNumber(doador.telefone, 'BR');
-        if (!telefoneValido.valid) {
+        const telefoneValido = validatePhoneNumber(passageiro.telefone, 'BR');
+        if (!telefoneValido.isValid) {
             return res.status(400).json("Telefone é inválido");
         }
         // Valide o CPF
-        if (!cpf.isValid(doador.cpf)) {
+        if (!cpf.isValid(passageiro.cpf)) {
             return res.status(400).json("CPF é inválido!");
         }
 
-        const doadorCriado = await doador.save()
-        res.status(201).json(doadorCriado)
+        const passageiroCriado = await passageiro.save()
+        res.status(201).json(passageiroCriado)
     } catch (error) {
         console.error('Erro ao criar: ', error)
         res.status(400).json({
