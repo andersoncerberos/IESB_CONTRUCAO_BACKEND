@@ -1,19 +1,29 @@
 const Passageiro = require('../models/passageiro')
 const { cpf } = require('cpf-cnpj-validator'); // Validador de CPF
 const { parsePhoneNumberFromString } = require('libphonenumber-js'); // Validador de telefone
+const { emailValidator } = require('e-valid'); //Validador de email
 
 
 async function create(req, res) {
     try {
         const passageiro = new Passageiro(req.body)
+
         // Valide o telefone
         const telefoneValido = validatePhoneNumber(passageiro.telefone, 'BR');
+
         if (!telefoneValido.isValid) {
             return res.status(400).json("Telefone é inválido");
         }
+
         // Valide o CPF
         if (!cpf.isValid(passageiro.cpf)) {
             return res.status(400).json("CPF é inválido!");
+
+        }
+        
+         // Valide o email
+         if (!emailValidator(passageiro.email)) {
+            return res.status(400).json({ mensagem: "Email é inválido!" });
         }
 
         const passageiroCriado = await passageiro.save()
