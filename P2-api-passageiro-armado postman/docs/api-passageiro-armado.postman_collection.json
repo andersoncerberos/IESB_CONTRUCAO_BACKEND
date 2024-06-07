@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "9e67f6f5-e070-4f10-b70d-7a24ae196e56",
+		"name": "api-passageiro-armado",
+		"description": "api para cadastro de passageiro armado em aeroportos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33154227"
+	},
+	"item": [
+		{
+			"name": "passageiro",
+			"item": [
+				{
+					"name": "criar-passageiro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"carlos\",\r\n    \"cpf\": \"1234556\",\r\n    \"email\": \"anderson@teste.com\",\r\n    \"telefone\": \"123456\",\r\n    \"enderecao\": {\r\n        \"cep\": \"123456\",\r\n        \"uf\":\"df\",\r\n        \"logradouro\":\"teste\",\r\n        \"localidade\":\"teste\",\r\n        \"bairro\":\"teste\",\r\n        \"numero\":123,\r\n        \"complemento\":\"teste\"\r\n    },\r\n    \"genero\": \"mascurlos\",\r\n    \"armas\": \"6662235215667536393c4896\",\r\n    \"orgao\": \"666225da2f37a49c57b4c9b5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{passageiro}}/passageiro",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passageiro"
+							]
+						},
+						"description": "criação do passageiro"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-passageiro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cargos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passageiro/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passageiro",
+								":"
+							]
+						},
+						"description": "buscar todos os passagiros no banco atraves do id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-passageiro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passageiro/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passageiro",
+								":"
+							]
+						},
+						"description": "atualizar uma passageiro especifico no banco peli id"
+					},
+					"response": []
+				},
+				{
+					"name": "remover-passageiro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passageiro/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passageiro",
+								":"
+							]
+						},
+						"description": "remover o passagiro atravez do id"
+					},
+					"response": []
+				}
+			],
+			"description": "cadastra o passageiro no banco"
+		},
+		{
+			"name": "passagem",
+			"item": [
+				{
+					"name": "criar-passagem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companiaAerea\":\"gol\",\r\n    \"destino\":\"sao paulo\",\r\n    \"dataPartida\":\"2024-02-12\",\r\n    \"dataChegada\":\"2024-02-20\",\r\n    \"numeroPassagem\":200456,\r\n    \"passageiro\":\"666227d9368e03024e4c573a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{passageiro}}/passagem",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passagem"
+							]
+						},
+						"description": "criar passagem para o banco"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-passagem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passagem",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passagem"
+							]
+						},
+						"description": "buscar todas as passagem"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passagem/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passagem",
+								":"
+							]
+						},
+						"description": "buscar todas as passagens atravez do id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-passagem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passagem/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passagem",
+								":"
+							]
+						},
+						"description": "atualizar um passagem especifica atravez da busca pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "remover-passagem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/passagem/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"passagem",
+								":"
+							]
+						},
+						"description": "deleta uma passagem atravez do seu id"
+					},
+					"response": []
+				}
+			],
+			"description": "cadastra a passagem aerea do passageiro"
+		},
+		{
+			"name": "armas",
+			"item": [
+				{
+					"name": "criar-armas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"clock\",\r\n    \"tipo\":\"pistola\",\r\n    \"numeracao\":\"123456\",\r\n    \"quantidade\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/armas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"armas"
+							]
+						},
+						"description": "criar uma arma"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-armas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/armas",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"armas"
+							]
+						},
+						"description": "buscar todas as armas"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/armas/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"armas",
+								":"
+							]
+						},
+						"description": "buscar uma armas especifica atravez do id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-armas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funcionario/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionario",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "atualizar uma armas especifica atravez do id"
+					},
+					"response": []
+				},
+				{
+					"name": "remover-armas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/armas/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"armas",
+								":"
+							]
+						},
+						"description": "remover uma arma especifica atravez do id"
+					},
+					"response": []
+				}
+			],
+			"description": "cadastra qual tipo de arma que o passageiro esta portando"
+		},
+		{
+			"name": "orgao",
+			"item": [
+				{
+					"name": "criar-orgao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"policia milita\",\r\n    \"regiao\":\"distrito federal\",\r\n    \"diretor\":\"patricia\",\r\n    \"departamento\":\"finanças\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{passageiro}}/orgao",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"orgao"
+							]
+						},
+						"description": "criar um orgao"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-orgao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/orgao",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"orgao"
+							]
+						},
+						"description": "buscar todos os orgaos"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/orgao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"orgao",
+								":"
+							]
+						},
+						"description": "buscar todos os orgaos atravez do id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-orgao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/orgao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"orgao",
+								":"
+							]
+						},
+						"description": "atualizar orgaos atravez do id"
+					},
+					"response": []
+				},
+				{
+					"name": "remover-orgao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/orgao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"orgao",
+								":"
+							]
+						},
+						"description": "remover um orgao atravez do id"
+					},
+					"response": []
+				}
+			],
+			"description": "cadastra o orgao que o passageiro esta vinculado"
+		},
+		{
+			"name": "missao",
+			"item": [
+				{
+					"name": "criar-missao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"escolta\",\r\n    \"DataInicio\":\"2024-02-12\",\r\n    \"DataTermino\":\"2024-02-20\",\r\n    \"QuantidadePessoas\":3,\r\n    \"passageiro\":\"666227d9368e03024e4c573a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{passageiro}}/missao",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"missao"
+							]
+						},
+						"description": "criando uma missao"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-missao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/missao",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"missao"
+							]
+						},
+						"description": "buscar todas as missoes"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/missao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"missao",
+								":"
+							]
+						},
+						"description": "buscar todas as missoes pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-missao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/missao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"missao",
+								":"
+							]
+						},
+						"description": "atualizar a missao pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "remover-missao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passageiro}}/missao/:",
+							"host": [
+								"{{passageiro}}"
+							],
+							"path": [
+								"missao",
+								":"
+							]
+						},
+						"description": "remove a missao pelo id"
+					},
+					"response": []
+				}
+			],
+			"description": "qual a missao que o passageiro ira executar"
+		},
+		{
+			"name": "autenticador",
+			"item": [
+				{
+					"name": "usuario",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"andersoncarlos\",\r\n    \"email\":\"andersoncarlos@teste.com\",\r\n    \"senha\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anderson@teste.com\",\r\n    \"senha\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "fazer o login para acessa a api"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uY2FybG9zQHRlc3RlLmNvbSIsImlhdCI6MTcxNzcwODExMSwiZXhwIjoxNzE3NzE1MzExfQ.ELSd8fbagjyqJ0WXmvxbes6M5ajSWY6LCsooIZFdqfQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "passageiro",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
