@@ -1,12 +1,30 @@
 const Passageiro = require('../models/passageiro')
+const { cpf } = require('cpf-cnpj-validator'); // Validador de CPF
+const { parsePhoneNumberFromString } = require('libphonenumber-js'); // Validador de telefone
+
 
 async function create(req, res) {
-   
-    const passageiro = new Passageiro(req.body)
-    const passageiroCriado = await passageiro.save()
-    res.status(201).json({ mensagem: "passageiro criado com sucesso", passageiroCriado })
+    try {
+        const passageiro = new Passageiro(req.body)
+        // Valide o telefone
+        const telefoneValido = validatePhoneNumber(doador.telefone, 'BR');
+        if (!telefoneValido.valid) {
+            return res.status(400).json("Telefone é inválido");
+        }
+        // Valide o CPF
+        if (!cpf.isValid(doador.cpf)) {
+            return res.status(400).json("CPF é inválido!");
+        }
 
-
+        const doadorCriado = await doador.save()
+        res.status(201).json(doadorCriado)
+    } catch (error) {
+        console.error('Erro ao criar: ', error)
+        res.status(400).json({
+            mensagem: 'Erro ao criar passageiro!',
+            erro: error.messager
+        })
+    }
 }
 
 async function getAll(req, res) {
