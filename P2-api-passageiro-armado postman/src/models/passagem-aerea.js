@@ -5,7 +5,8 @@ const schema = new mongoose.Schema(
         companiaAerea: {
             type: String,
             required: true
-        },destino:{
+        },
+        destino:{
             type:String,
             required: true
 

@@ -5,13 +5,16 @@ const schema = new mongoose.Schema(
         nome: {
             type: String,
             required: true
-        }, regiao: {
+        },
+        regiao: {
             type: String,
             required: true
-        }, diretor: {
+        }, 
+        diretor: {
             type: String,
             required: true
-        }, departamento: {
+        }, 
+        departamento: {
             type: String,
             required: true
         }

@@ -18,5 +18,5 @@ const routes = require('./routes/routes')
 app.use("/", checarToken, routes)
 
 app.listen(PORT, () => {
-    console.log(`Aplicação rodando na porta ${PORT}`)
+    console.log(`Aplicação rodando http://localhost:${PORT}`)
 })
