@@ -1,7 +1,7 @@
 const yup = require('yup');
 
 
-const armaSchema = yup.object().shape({
+const armasSchema = yup.object().shape({
     nome: yup
         .string('campo precisa ser uma texto')
         .required('campo obrigatório'),
@@ -16,14 +16,11 @@ const armaSchema = yup.object().shape({
         .required('campo obrigatório')
 });
 
-// Definindo o esquema para o array de armas com limite de 3 objetos
-const armasArraySchema = yup.array()
-    .of(armaSchema)
-    .min(1, 'limite minimmo de armas ')
-    .max(3, 'limite maximo de armas');
+
+
 
 function armasValidador(req, res, next) {
-    armasArraySchema
+    armasSchema
         .validate(req.body, { abortEarly: false })
         .then(() => next())
         .catch(err => {

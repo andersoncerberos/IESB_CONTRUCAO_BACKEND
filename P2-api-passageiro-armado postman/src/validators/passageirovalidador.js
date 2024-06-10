@@ -32,7 +32,7 @@ const passageiroschema = yup.object().shape({
 })
 
 function passageiroValidador(req, res, next) {
-    passageiroschemaschema
+    passageiroschema
         .validate(req.body, { abortEarly: false })
         .then(() => next())
         .catch(err => {

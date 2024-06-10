@@ -7,7 +7,7 @@ const orgaoSchema = yup.object().shape({
     regiao: yup
         .string('campo precisa ser uma texto')
         .required('campo obrigatório'),
-    direto: yup
+    diretor: yup
         .string('campo precisa ser uma texto')
         .required('campo obrigatório'),
     departamento: yup
