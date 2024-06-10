@@ -45,7 +45,7 @@ async function login(req, res) {
         return res.status(401).json({ mensagem: "usuário ou senha inválidos!" })
     }
 
-    const token = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '2h' })
+    const token = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '4h' })
 
     res.json(
         {

@@ -28,11 +28,11 @@ router.put('/passagem/:id',validarid,passagemValidador,passagemaereacontroller.u
 router.delete('/passagem/:id', validarid, passagemaereacontroller.remove)
 
 //armas
-router.post('/armas',armasValidador,armascontroller.create)
-router.get('/armas', armascontroller.getAll)
-router.get('/armas/:id', validarid,armasValidador , armascontroller.getByid)
-router.put('/armas/:id',validarid,armasValidador,armascontroller.update)
-router.delete('/armas/:id', validarid, armascontroller.remove)
+router.post('/arma',armasValidador,armascontroller.create)
+router.get('/arma', armascontroller.getAll)
+router.get('/arma/:id', validarid,armasValidador , armascontroller.getByid)
+router.put('/arma/:id',validarid,armasValidador,armascontroller.update)
+router.delete('/arma/:id', validarid, armascontroller.remove)
 
 //orgao
 router.post('/orgao',orgaoValidador,orgaocontroller.create)

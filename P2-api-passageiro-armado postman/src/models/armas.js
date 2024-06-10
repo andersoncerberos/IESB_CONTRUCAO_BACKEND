@@ -25,6 +25,6 @@ const schema = new mongoose.Schema(
     }
 )
 
-const Armas = mongoose.model('armas', schema)
+const Armas = mongoose.model('arma', schema)
 
 module.exports = Armas

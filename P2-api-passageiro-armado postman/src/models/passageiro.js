@@ -40,8 +40,9 @@ const schema = new mongoose.Schema(
         },
         armas: {
             type: mongoose.SchemaTypes.ObjectId,
-            ref: 'armas',
-            required: true
+            ref: 'arma',
+            required: false
+
         },
         orgao: {
             type: mongoose.SchemaTypes.ObjectId,
